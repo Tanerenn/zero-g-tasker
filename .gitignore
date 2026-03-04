@@ -1,0 +1,17 @@
+# Python/Django
+backend/venv/
+backend/__pycache__/
+backend/*.py[cod]
+backend/*$py.class
+backend/db.sqlite3
+backend/backend.log
+
+# Node/React/Vite
+frontend/node_modules/
+frontend/dist/
+frontend/frontend.log
+frontend/.eslintcache
+
+# OS Files
+.DS_Store
+Thumbs.db
