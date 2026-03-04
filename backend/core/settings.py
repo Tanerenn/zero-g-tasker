@@ -16,13 +16,11 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)c(9@o*!6k1*$u4@!mre@151yy+qn8ok3x&lomp-=rnd08y#py'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+
+
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -126,3 +124,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
