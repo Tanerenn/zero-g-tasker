@@ -8,18 +8,18 @@ export default function TaskObject({ task, onComplete, index }) {
     const [hovered, setHovered] = useState(false);
     const isCompleted = task.is_completed;
 
-    // Randomize initial position slightly so they don't drop on exactly the same spot
+   
     const xPos = (Math.random() - 0.5) * 4;
     const zPos = (Math.random() - 0.5) * 4;
     const initialPosition = [xPos, 5 + index, zPos];
 
-    // Apply Antigravity on Completion
+    
     useEffect(() => {
         if (isCompleted && rigidBodyRef.current) {
-            // Set gravity scale to negative for this object so it floats up (0.5 times normal gravity inverted)
+           
             rigidBodyRef.current.setGravityScale(-0.5, true);
 
-            // Give it an initial upwards impulse based on weight to pop it up satisfyingly
+           
             const force = task.weight * 2;
             rigidBodyRef.current.applyImpulse({ x: 0, y: force, z: 0 }, true);
 
@@ -42,10 +42,10 @@ export default function TaskObject({ task, onComplete, index }) {
     const size = 0.6 + (task.weight * 0.1);
 
     const getColor = () => {
-        if (isCompleted) return '#38bdf8'; // Glowing blue when completed
-        if (task.weight >= 4) return '#ef4444'; // Red for heavy/urgent
-        if (task.weight >= 2) return '#eab308'; // Yellow for medium
-        return '#818cf8'; // Soft purple-blue for light
+        if (isCompleted) return '#38bdf8'; 
+        if (task.weight >= 4) return '#ef4444'; 
+        if (task.weight >= 2) return '#eab308'; 
+        return '#818cf8'; 
     };
 
     return (
@@ -53,9 +53,9 @@ export default function TaskObject({ task, onComplete, index }) {
             ref={rigidBodyRef}
             position={initialPosition}
             mass={task.weight}
-            restitution={0.6} // Make them delightfully bouncy
+            restitution={0.6} 
             colliders="cuboid"
-            canSleep={!isCompleted} // Never sleep once floating away
+            canSleep={!isCompleted} 
         >
             <mesh
                 castShadow
@@ -73,7 +73,7 @@ export default function TaskObject({ task, onComplete, index }) {
                     metalness={0.8}
                 />
 
-                {/* Title Text on the cube facing Forward*/}
+               
                 <Text
                     position={[0, 0, size / 2 + 0.01]}
                     fontSize={size * 0.15}
@@ -90,3 +90,4 @@ export default function TaskObject({ task, onComplete, index }) {
         </RigidBody>
     );
 }
+
