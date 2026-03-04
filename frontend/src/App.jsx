@@ -33,7 +33,7 @@ export default function App() {
 
     const handleTaskComplete = async (task) => {
         try {
-            // Optimistic update for immediate physical and visual feedback
+            
             setTasks(prevTasks =>
                 prevTasks.map(t => t.id === task.id ? { ...t, is_completed: true } : t)
             );
@@ -41,7 +41,7 @@ export default function App() {
             await updateTask(task.id, { is_completed: true });
         } catch (error) {
             console.error("Failed to update task", error);
-            // Revert if API call fails
+            
             setTasks(prevTasks =>
                 prevTasks.map(t => t.id === task.id ? { ...t, is_completed: false } : t)
             );
@@ -78,3 +78,4 @@ export default function App() {
         </div>
     );
 }
+
